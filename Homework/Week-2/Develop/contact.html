@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="./Portfolio.css">
+    <link rel="stylesheet" href="../Develop/Portfolio.css">
     <title>Grant Scriver's Portfolio</title>
-
+<!--Notice the links to my css & bootstrap-->
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-light" style="background-color: #ae6ab4;">
-        <h1>Grant Scriver</h1>
+<!--This section represents the nav bar at the top of the site with links to the other HTML-->
+  <header>
+    <nav class="navbar navbar-light" style="background-color: #ae6ab4;">
+      <h2>Grant Scriver</h2>
         <div>
            <a href="./index.html">About</a>
             <a href="./portfolio.html">Portfolio</a>
             <a href="./contact.html">Contact</a>
-           </div>    
-        </nav>
-    </header>
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-          <div class="col-md-6">
-            <img src="../Assets/Images/image0(1).jpeg" class="card-img" alt="Photo of me">
+        </div>    
+    </nav>
+  </header>
+<!--This section represents to container which has a decorative photo & contact information-->  
+  <section class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <h1>Contact</h1>
+        <div class="row">
+          <div class="col-md-3">
+            <img src="../Assets/Images/Contact.jpg" class="img" alt="Communication Photo" />
           </div>
-          <div class="col-md-12">
-            <div class="card-body">
-              <h2 class="card-title">About Me</h2>
-              <p class="card-text">Hello my name is Grant Scriver. I am in a coding bootcamp.
-                We are studying how to code HTML, CSS, & Javascript. I am excited to learn
-                this and get into the web devolopment industry!</p>
-            </div>
+          <div class="col-md-9">
+            <ul>
+              <li>
+                  <p>Email: grantscriver@gmail.com </p>
+              </li>
+              <li>
+                  <p>Phone Number: 612-875-0809 </p>
+              </li>
+          </ul>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
 </body>
 
 </html>
