@@ -1,1 +1,1 @@
-This is my second homework assignment, it will eventually be turned into my portfolio. I have edisgned a website with clickable links and responsives images. Included is my contact information, links to my media platforms, and it will eventually build into more.
+This is my second homework assignment, it will eventually be turned into my portfolio. I have designed a website with clickable links and responsives images. Included is my contact information, links to my media platforms, and it will eventually build into more.
