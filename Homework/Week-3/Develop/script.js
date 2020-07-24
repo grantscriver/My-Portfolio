@@ -101,15 +101,17 @@ var firstPrompt = prompt(
 if (firstPrompt < 8 || firstPrompt > 128) {
   alert("Password doesnt meet criteria, Please try again");
 } else {
-  var firstConfirm = confirm("Click ok to confirm including special charcters");
+  var firstConfirm = confirm(
+    "Click ok to confirm including special characters"
+  );
   var secondConfirm = confirm(
     "Click ok to confirm including numeric characters"
   );
   var thirdConfirm = confirm(
-    "Click ok to confirm including lowercase charcters"
+    "Click ok to confirm including lowercase characters"
   );
   var fourthConfirm = confirm(
-    "Click ok to confirm including uppercase charcters"
+    "Click ok to confirm including uppercase characters"
   );
 }
 
