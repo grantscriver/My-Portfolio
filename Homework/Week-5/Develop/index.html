@@ -29,7 +29,7 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container" id="save-text">
-      <div class="row time-block">
+      <div class="row time-block" id="9am">
         <div class="col-3 hour">
           <h3 class="time-block 9am">9am</h3>
         </div>
@@ -37,7 +37,7 @@
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block">
+      <div class="row time-block" id="10am">
         <div class="col-3 hour">
           <h3 class="time-block 10am">10am</h3>
         </div>
@@ -45,7 +45,7 @@
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block">
+      <div class="row time-block" id="11am">
         <div class="col-3 hour">
           <h3 class="time-block 11am">11am</h3>
         </div>
@@ -53,7 +53,7 @@
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block">
+      <div class="row time-block" id="12pm">
         <div class="col-3 hour">
           <h3 class="time-block 12pm">12pm</h3>
         </div>
@@ -61,7 +61,7 @@
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block">
+      <div class="row time-block" id="1pm">
         <div class="col-3 hour">
           <h3 class="time-block 1pm">1pm</h3>
         </div>
@@ -69,7 +69,7 @@
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block">
+      <div class="row time-block" id="2pm">
         <div class="col-3 hour">
           <h3 class="time-block 2pm">2pm</h3>
         </div>
@@ -77,7 +77,7 @@
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block">
+      <div class="row time-block" id="3pm">
         <div class="col-3 hour">
           <h3 class="time-block 3pm">3pm</h3>
         </div>
@@ -85,7 +85,7 @@
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block">
+      <div class="row time-block" id="4pm">
         <div class="col-3 hour">
           <h3 class="time-block 4pm">4pm</h3>
         </div>
@@ -93,7 +93,7 @@
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block">
+      <div class="row time-block" id="5pm">
         <div class="col-3 hour">
           <h3 class="time-block 5pm">5pm</h3>
         </div>
@@ -107,12 +107,24 @@
     <script src="./script.js"></script>
     <script>
       $(document).ready(function () {
-        $("button").click(function() {
-          alert(" " + $(".description").val())
-        });
         var todaysDate = $("#currentDay");
         var todaysDay = moment().format("MMM Do YY");
         todaysDate.text(todaysDay);
+        $(".saveBtn").click(function() {
+        var note = $(this).siblings(".description").val()
+        var noteName = $(this).siblings(".description").attr("data-time")
+        localStorage.setItem(noteName, note)
+          });
+          $("#9am .description").val(localStorage.getItem("9am"))
+          $("#10am .description").val(localStorage.getItem("10am"))
+          $("#11am .description").val(localStorage.getItem("11am"))
+          $("#12pm .description").val(localStorage.getItem("12pm"))
+          $("#1pm .description").val(localStorage.getItem("1pm"))
+          $("#2pm .description").val(localStorage.getItem("2pm"))
+          $("#3pm .description").val(localStorage.getItem("3pm"))
+          $("#4pm .description").val(localStorage.getItem("4pm"))
+        $("#5pm .description").val(localStorage.getItem("5pm"))
+      
       });
     </script>
   </body>
