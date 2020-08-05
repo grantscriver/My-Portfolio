@@ -28,104 +28,199 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+    
+    <!--I created each row in the container to display the time, have an input box for different activities, and have a save button to save the input to local storage for each hour from 9AM-5PM-->
+    
     <div class="container" id="save-text">
-      <div class="row time-block" id="9am">
+      <div class="row time-block" id="9">
         <div class="col-3 hour">
-          <h3 class="time-block 9am">9am</h3>
+          <h3 class="time-block 9am">9AM</h3>
         </div>
-        <input type ="text" class="description col-6" data-time="9am" value=""></input>
+        <input id="9-am" type ="text" class="description col-6" data-time="9am" value=""></input>
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block" id="10am">
+      <div class="row time-block" id="10">
         <div class="col-3 hour">
-          <h3 class="time-block 10am">10am</h3>
+          <h3 class="time-block 10am">10AM</h3>
         </div>
-        <input type ="text" class="description col-6" data-time="10am" value=""></input>
+        <input id="10-am" type ="text" class="description col-6" data-time="10am" value=""></input>
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block" id="11am">
+      <div class="row time-block" id="11">
         <div class="col-3 hour">
-          <h3 class="time-block 11am">11am</h3>
+          <h3 class="time-block 11am">11AM</h3>
         </div>
-        <input type ="text" class="description col-6" data-time="11am" value=""></input>
+        <input id="11-am" type ="text" class="description col-6" data-time="11am" value=""></input>
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block" id="12pm">
+      <div class="row time-block" id="12">
         <div class="col-3 hour">
-          <h3 class="time-block 12pm">12pm</h3>
+          <h3 class="time-block 12pm">12PM</h3>
         </div>
-        <input type ="text"class="description col-6" data-time="12pm" value=""></input>
+        <input id="12-pm" type ="text"class="description col-6" data-time="12pm" value=""></input>
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block" id="1pm">
+      <div class="row time-block" id="13">
         <div class="col-3 hour">
-          <h3 class="time-block 1pm">1pm</h3>
+          <h3 class="time-block 1pm">1PM</h3>
         </div>
-        <input type ="text" class="description col-6" data-time="1pm" value=""></input>
+        <input id="13-pm" type ="text" class="description col-6" data-time="1pm" value=""></input>
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block" id="2pm">
+      <div class="row time-block" id="14">
         <div class="col-3 hour">
-          <h3 class="time-block 2pm">2pm</h3>
+          <h3 class="time-block 2pm">2PM</h3>
         </div>
-        <input type ="text" class="description col-6" data-time="2pm" value=""></input>
+        <input id="14-pm" type ="text" class="description col-6" data-time="2pm" value=""></input>
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block" id="3pm">
+      <div class="row time-block" id="15">
         <div class="col-3 hour">
-          <h3 class="time-block 3pm">3pm</h3>
+          <h3 class="time-block 3pm">3PM</h3>
         </div>
-        <input type ="text" class="description col-6" data-time="3pm" value=""></input>
+        <input id="15-pm" type ="text" class="description col-6" data-time="3pm" value=""></input>
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block" id="4pm">
+      <div class="row time-block" id="16">
         <div class="col-3 hour">
-          <h3 class="time-block 4pm">4pm</h3>
+          <h3 class="time-block 4pm">4PM</h3>
         </div>
-        <input type ="text" class="description col-6" data-time="4pm" value=""></input>
+        <input id="16-pm" type ="text" class="description col-6" data-time="4pm" value=""></input>
         <button class="saveBtn col-3" type="button">save</button>
       </div>
       <br /><br />
-      <div class="row time-block" id="5pm">
+      <div class="row time-block" id="17">
         <div class="col-3 hour">
-          <h3 class="time-block 5pm">5pm</h3>
+          <h3 class="time-block 5pm">5PM</h3>
         </div>
-        <input type ="text" class="description col-6" data-time="5pm" value=""></input>
+        <input id="17-pm" type ="text" class="description col-6" data-time="5pm" value=""></input>
         <button class="saveBtn col-3" type="button">save</button>
       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./script.js"></script>
+    
     <script>
+      
       $(document).ready(function () {
+      
+      // I established the variables I needed to then display the current date in the header using Moment.js
+        
         var todaysDate = $("#currentDay");
-        var todaysDay = moment().format("MMM Do YY");
+        var todaysDay = moment().format("MMM Do YYYY");
         todaysDate.text(todaysDay);
+      
+      // I programmed each button to save the description by grabbing each input through the data-time attr using jQuery 
+        
         $(".saveBtn").click(function() {
         var note = $(this).siblings(".description").val()
         var noteName = $(this).siblings(".description").attr("data-time")
-        localStorage.setItem(noteName, note)
-          });
-          $("#9am .description").val(localStorage.getItem("9am"))
-          $("#10am .description").val(localStorage.getItem("10am"))
-          $("#11am .description").val(localStorage.getItem("11am"))
-          $("#12pm .description").val(localStorage.getItem("12pm"))
-          $("#1pm .description").val(localStorage.getItem("1pm"))
-          $("#2pm .description").val(localStorage.getItem("2pm"))
-          $("#3pm .description").val(localStorage.getItem("3pm"))
-          $("#4pm .description").val(localStorage.getItem("4pm"))
-        $("#5pm .description").val(localStorage.getItem("5pm"))
       
+      // I saved this information to the local storage
+        
+        localStorage.setItem(noteName, note)
+        });
+      
+      // I programmed each row to have its own local storage to store the users input from the .description class
+        
+        $("#9 .description").val(localStorage.getItem("9am"))
+        $("#10 .description").val(localStorage.getItem("10am"))
+        $("#11 .description").val(localStorage.getItem("11am"))
+        $("#12 .description").val(localStorage.getItem("12pm"))
+        $("#13 .description").val(localStorage.getItem("1pm"))
+        $("#14 .description").val(localStorage.getItem("2pm"))
+        $("#15 .description").val(localStorage.getItem("3pm"))
+        $("#16 .description").val(localStorage.getItem("4pm"))
+        $("#17 .description").val(localStorage.getItem("5pm"))
+        
+      //This variable gets the time number from moment and stores it.
+        
+        var currentHour = moment().format('H')
+        
+      //These various if & else if statements check the whether the time is lower, higher or equal to the currentHour variable from 9AM-5PM. Then it adds either a past, present, or future class with different css styling to the input of each row depending on whether the hour of the row is in past, present, or future. 
+        
+        if (currentHour > 9) {
+          $("#9-am").addClass("past")
+        } else if (currentHour == 9) {
+          $("#9-am").removeClass("past").addClass("present")
+        } else if (currentHour < 9) {
+          $("#9-am").removeClass("past").removeClass("present").addClass("future");
+        }
+        
+        if (currentHour > 10) {
+          $("#10-am").addClass("past")
+        } else if (currentHour == 10) {
+          $("#10-am").removeClass("past").addClass("present")
+        } else if (currentHour < 10) {
+          $("#10-am").removeClass("past").removeClass("present").addClass("future");
+        }
+        
+        if (currentHour > 11) {
+          $("#11-am").addClass("past")
+        } else if (currentHour == 11) {
+          $("#11-am").removeClass("past").addClass("present")
+        } else if (currentHour < 11) {
+          $("#11-am").removeClass("past").removeClass("present").addClass("future");
+        }
+        
+        if (currentHour > 12) {
+          $("#12-pm").addClass("past")
+        } else if (currentHour == 12) {
+          $("#12-pm").removeClass("past").addClass("present")
+        } else if (currentHour < 12) {
+          $("#12-pm").removeClass("past").removeClass("present").addClass("future");
+        }
+
+        if (currentHour > 13) {
+          $("#13-pm").addClass("past")
+        } else if (currentHour == 13) {
+          $("#13-pm").removeClass("past").addClass("present")
+        } else if (currentHour < 13) {
+          $("#13-pm").removeClass("past").removeClass("present").addClass("future");
+        }
+
+        if (currentHour > 14) {
+          $("#14-pm").addClass("past")
+        } else if (currentHour == 14) {
+          $("#14-pm").removeClass("past").addClass("present")
+        } else if (currentHour < 14) {
+          $("#14-pm").removeClass("past").removeClass("present").addClass("future");
+        }
+
+        if (currentHour > 15) {
+          $("#15-pm").addClass("past")
+        } else if (currentHour == 15) {
+          $("#15-pm").removeClass("past").addClass("present")
+        } else if (currentHour < 15) {
+          $("#15-pm").removeClass("past").removeClass("present").addClass("future");
+        }
+
+        if (currentHour > 16) {
+          $("#16-pm").addClass("past")
+        } else if (currentHour == 16) {
+          $("#16-pm").removeClass("past").addClass("present")
+        } else if (currentHour < 16) {
+          $("#16-pm").removeClass("past").removeClass("present").addClass("future");
+        }
+
+        if (currentHour > 17) {
+          $("#17-pm").addClass("past")
+        } else if (currentHour == 17) {
+          $("#17-pm").removeClass("past").addClass("present")
+        } else if (currentHour < 17) {
+          $("#17-pm").removeClass("past").removeClass("present").addClass("future");
+        }
+
       });
+
     </script>
   </body>
 </html>
