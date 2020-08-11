@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.card-body {
+  text-align: center;
+}
