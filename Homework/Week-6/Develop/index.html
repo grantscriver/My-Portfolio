@@ -8,10 +8,10 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="jumbotron jumbotron-fluid">
         <h1 class="display-4">Weather Dashboard</h1>
       </div>
@@ -29,7 +29,8 @@
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button
+              </input>
+              <button id="searchBtn"
                 class="btn btn-outline-success my-2 my-sm-0"
                 type="submit"
               >
@@ -37,6 +38,7 @@
               </button>
             </form>
           </nav>
+          <li id="cities"></li>
         </div>
         <div id="cityWeather" class="col-lg-8">
           <div class="card">
@@ -90,10 +92,18 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
-      var city = [];
-      // this is trash code
-      city.push("Denver");
+      var cities = [];
       const APIKey = "ccf49234266952500efc59b9826d704e";
+      
+      function searchCity(event){
+        event.preventDefault();
+      var city = $("#chosenCity").val().trim()
+      console.log(city)
+
+      var list = $("<button>").addClass("cityBtn").text(city)
+      $("#cities").append(list)
+
+
       var CurrentDate = new Date().toLocaleString();
       var latitude = 0;
       var longitude = 0;
@@ -101,7 +111,7 @@
       var queryURL =
         "https://api.openweathermap.org/data/2.5/weather?" +
         "q=" +
-        city[0] +
+        city +
         "&appid=" +
         APIKey;
 
@@ -132,27 +142,116 @@
           $(".uv").text("UV Index: " + response.value.toFixed(1));
         });
       });
+      fiveDayForecast(city);
+    }
+
+function fiveDayForecast(city){
+  
       fiveDayURL =
         "http://api.openweathermap.org/data/2.5/forecast?q=" +
-        city[0] +
+        city +
         "&appid=" +
         APIKey;
       $.ajax({
         url: fiveDayURL,
         method: "GET",
       }).then(function (response) {
-        var dayOneDate = response.list[7].dt.toLocaleString();
+        
+        // Display day one forecast info
+        var dayOneDate = new Date(response.list[7].dt*1000).toLocaleDateString();
+        var icon = response.list[7].weather[0].icon
+        var iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        
         $(".dayOneTitle").text(dayOneDate);
-        $(".dayOneWeather").text(
-          "Weather: " + response.list[7].weather[0].main
-        );
+
+        $(".dayOneWeather").empty();
+        $(".dayOneWeather").append(
+          iconURL  
+        )
         $(".dayOneTemp").text(
-          "Temperature: " + response.list[7].main.temp + "°F"
+          "Temperature: " + (((response.list[7].main.temp-273.15)*9)/5+32).toFixed(1) + "°F"
         );
         $(".dayOneHum").text(
           "Humidity: " + response.list[7].main.humidity + "%"
         );
-      });
+        
+        
+        // Display day two forecast info
+        var dayOneDate = new Date(response.list[15].dt*1000).toLocaleDateString();
+        icon = response.list[15].weather[0].icon
+        iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        
+        $(".dayTwoTitle").text(dayOneDate);
+
+        $(".dayTwoWeather").empty();
+        $(".dayTwoWeather").append(
+          iconURL  
+        )
+        $(".dayTwoTemp").text(
+          "Temperature: " + (((response.list[15].main.temp-273.15)*9)/5+32).toFixed(1) + "°F"
+        );
+        $(".dayTwoHum").text(
+          "Humidity: " + response.list[15].main.humidity + "%"
+        );
+
+        var dayOneDate = new Date(response.list[23].dt*1000).toLocaleDateString();
+        icon = response.list[23].weather[0].icon
+        iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        
+        $(".dayThreeTitle").text(dayOneDate);
+
+        $(".dayThreeWeather").empty();
+        $(".dayThreeWeather").append(
+          iconURL  
+        )
+        $(".dayThreeTemp").text(
+          "Temperature: " + (((response.list[23].main.temp-273.15)*9)/5+32).toFixed(1) + "°F"
+        );
+        $(".dayThreeHum").text(
+          "Humidity: " + response.list[23].main.humidity + "%"
+        );
+        
+        var dayOneDate = new Date(response.list[31].dt*1000).toLocaleDateString();
+        icon = response.list[31].weather[0].icon
+        iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        
+        $(".dayFourTitle").text(dayOneDate);
+
+        $(".dayFourWeather").empty();
+        $(".dayFourWeather").append(
+          iconURL  
+        )
+        $(".dayFourTemp").text(
+          "Temperature: " + (((response.list[31].main.temp-273.15)*9)/5+32).toFixed(1) + "°F"
+        );
+        $(".dayFourHum").text(
+          "Humidity: " + response.list[31].main.humidity + "%"
+        );
+
+        var dayOneDate = new Date(response.list[39].dt*1000).toLocaleDateString();
+        icon = response.list[39].weather[0].icon
+        iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        
+        $(".dayFiveTitle").text(dayOneDate);
+
+        $(".dayFiveWeather").empty();
+        $(".dayFiveWeather").append(
+          iconURL  
+        )
+        $(".dayFiveTemp").text(
+          "Temperature: " + (((response.list[39].main.temp-273.15)*9)/5+32).toFixed(1) + "°F"
+        );
+        $(".dayFiveHum").text(
+          "Humidity: " + response.list[39].main.humidity + "%"
+        );
+
+      })
+}
+      
+
+      $("#searchBtn").on("click", searchCity)
+
+    
     </script>
   </body>
 </html>
