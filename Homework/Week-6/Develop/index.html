@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!--In this container I have declared the HTML basic layout so it is ready to function when ran with java script-->
     <div class="container-fluid">
       <div class="jumbotron jumbotron-fluid">
         <h1 class="display-4">Weather Dashboard</h1>
@@ -95,11 +96,11 @@
       var cities = [];
       const APIKey = "ccf49234266952500efc59b9826d704e";
       
+      // This function takes whatever city the user inputs and displays the date and time in the title of the card, while rendering the temperature, humidity, wind speed, UV Index 
+      
       function searchCity(event){
         event.preventDefault();
       var city = $("#chosenCity").val().trim()
-      console.log(city)
-
       var list = $("<button>").addClass("cityBtn").text(city)
       $("#cities").append(list)
 
@@ -145,6 +146,8 @@
       fiveDayForecast(city);
     }
 
+    // This function displays the 5 day forecast based off which city the user inputs
+
 function fiveDayForecast(city){
   
       fiveDayURL =
@@ -158,6 +161,7 @@ function fiveDayForecast(city){
       }).then(function (response) {
         
         // Display day one forecast info
+        
         var dayOneDate = new Date(response.list[7].dt*1000).toLocaleDateString();
         var icon = response.list[7].weather[0].icon
         var iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
@@ -175,8 +179,8 @@ function fiveDayForecast(city){
           "Humidity: " + response.list[7].main.humidity + "%"
         );
         
-        
         // Display day two forecast info
+        
         var dayOneDate = new Date(response.list[15].dt*1000).toLocaleDateString();
         icon = response.list[15].weather[0].icon
         iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
@@ -193,7 +197,9 @@ function fiveDayForecast(city){
         $(".dayTwoHum").text(
           "Humidity: " + response.list[15].main.humidity + "%"
         );
-
+        
+        // Display day three forecast info
+        
         var dayOneDate = new Date(response.list[23].dt*1000).toLocaleDateString();
         icon = response.list[23].weather[0].icon
         iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
@@ -211,6 +217,8 @@ function fiveDayForecast(city){
           "Humidity: " + response.list[23].main.humidity + "%"
         );
         
+        // Display day four forecast info
+        
         var dayOneDate = new Date(response.list[31].dt*1000).toLocaleDateString();
         icon = response.list[31].weather[0].icon
         iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
@@ -227,7 +235,9 @@ function fiveDayForecast(city){
         $(".dayFourHum").text(
           "Humidity: " + response.list[31].main.humidity + "%"
         );
-
+        
+        // Display day five forecast info
+        
         var dayOneDate = new Date(response.list[39].dt*1000).toLocaleDateString();
         icon = response.list[39].weather[0].icon
         iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
@@ -247,9 +257,10 @@ function fiveDayForecast(city){
 
       })
 }
+      //This click function lets users search for different cities when the search button is clicked.
       
-
       $("#searchBtn").on("click", searchCity)
+      
 
     
     </script>
