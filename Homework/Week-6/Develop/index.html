@@ -130,7 +130,7 @@
           "Wind Speed: " + response.wind.speed.toFixed(1) + " MPH"
         );
         uvQueryURL =
-          "http://api.openweathermap.org/data/2.5/uvi?appid=" +
+          "https://api.openweathermap.org/data/2.5/uvi?appid=" +
           APIKey +
           "&lat=" +
           latitude +
@@ -151,7 +151,7 @@
 function fiveDayForecast(city){
   
       fiveDayURL =
-        "http://api.openweathermap.org/data/2.5/forecast?q=" +
+        "https://api.openweathermap.org/data/2.5/forecast?q=" +
         city +
         "&appid=" +
         APIKey;
@@ -164,7 +164,7 @@ function fiveDayForecast(city){
         
         var dayOneDate = new Date(response.list[7].dt*1000).toLocaleDateString();
         var icon = response.list[7].weather[0].icon
-        var iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        var iconURL = $("<img>").attr("src","https://openweathermap.org/img/wn/"+icon+"@2x.png")
         
         $(".dayOneTitle").text(dayOneDate);
 
@@ -183,7 +183,7 @@ function fiveDayForecast(city){
         
         var dayOneDate = new Date(response.list[15].dt*1000).toLocaleDateString();
         icon = response.list[15].weather[0].icon
-        iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        iconURL = $("<img>").attr("src","https://openweathermap.org/img/wn/"+icon+"@2x.png")
         
         $(".dayTwoTitle").text(dayOneDate);
 
@@ -202,7 +202,7 @@ function fiveDayForecast(city){
         
         var dayOneDate = new Date(response.list[23].dt*1000).toLocaleDateString();
         icon = response.list[23].weather[0].icon
-        iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        iconURL = $("<img>").attr("src","https://openweathermap.org/img/wn/"+icon+"@2x.png")
         
         $(".dayThreeTitle").text(dayOneDate);
 
@@ -221,7 +221,7 @@ function fiveDayForecast(city){
         
         var dayOneDate = new Date(response.list[31].dt*1000).toLocaleDateString();
         icon = response.list[31].weather[0].icon
-        iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        iconURL = $("<img>").attr("src","https://openweathermap.org/img/wn/"+icon+"@2x.png")
         
         $(".dayFourTitle").text(dayOneDate);
 
@@ -240,7 +240,7 @@ function fiveDayForecast(city){
         
         var dayOneDate = new Date(response.list[39].dt*1000).toLocaleDateString();
         icon = response.list[39].weather[0].icon
-        iconURL = $("<img>").attr("src","http://openweathermap.org/img/wn/"+icon+"@2x.png")
+        iconURL = $("<img>").attr("src","https://openweathermap.org/img/wn/"+icon+"@2x.png")
         
         $(".dayFiveTitle").text(dayOneDate);
 
