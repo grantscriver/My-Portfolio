@@ -98,53 +98,48 @@
       
       // This function takes whatever city the user inputs and displays the date and time in the title of the card, while rendering the temperature, humidity, wind speed, UV Index 
       
-      function searchCity(event){
+      function searchCity(city){
         event.preventDefault();
-      var city = $("#chosenCity").val().trim()
-      var list = $("<button>").addClass("cityBtn").text(city)
-      $("#cities").append(list)
-
-
-      var CurrentDate = new Date().toLocaleString();
-      var latitude = 0;
-      var longitude = 0;
-      var uvQueryURL = "";
-      var queryURL =
-        "https://api.openweathermap.org/data/2.5/weather?" +
-        "q=" +
-        city +
-        "&appid=" +
-        APIKey;
-
-      $.ajax({
-        url: queryURL,
-        method: "GET",
-      }).then(function (response) {
-        var tempF = ((response.main.temp - 273.15) * 9) / 5 + 32;
-        longitude = response.coord.lon;
-        latitude = response.coord.lat;
-        $(".cityTitle").text(response.name + " (" + CurrentDate + ")");
-        $(".temp").text("Temperature: " + tempF.toFixed(1) + "°F");
-        $(".humidity").text("Humidity: " + response.main.humidity + "%");
-        $(".windSpeed").text(
-          "Wind Speed: " + response.wind.speed.toFixed(1) + " MPH"
-        );
-        uvQueryURL =
-          "https://api.openweathermap.org/data/2.5/uvi?appid=" +
-          APIKey +
-          "&lat=" +
-          latitude +
-          "&lon=" +
-          longitude;
+        var CurrentDate = new Date().toLocaleString();
+        var latitude = 0;
+        var longitude = 0;
+        var uvQueryURL = "";
+        var queryURL =
+          "https://api.openweathermap.org/data/2.5/weather?" +
+          "q=" +
+          city +
+          "&appid=" +
+          APIKey;
+  
         $.ajax({
-          url: uvQueryURL,
+          url: queryURL,
           method: "GET",
         }).then(function (response) {
-          $(".uv").text("UV Index: " + response.value.toFixed(1));
+          var tempF = ((response.main.temp - 273.15) * 9) / 5 + 32;
+          longitude = response.coord.lon;
+          latitude = response.coord.lat;
+          $(".cityTitle").text(response.name + " (" + CurrentDate + ")");
+          $(".temp").text("Temperature: " + tempF.toFixed(1) + "°F");
+          $(".humidity").text("Humidity: " + response.main.humidity + "%");
+          $(".windSpeed").text(
+            "Wind Speed: " + response.wind.speed.toFixed(1) + " MPH"
+          );
+          uvQueryURL =
+            "https://api.openweathermap.org/data/2.5/uvi?appid=" +
+            APIKey +
+            "&lat=" +
+            latitude +
+            "&lon=" +
+            longitude;
+          $.ajax({
+            url: uvQueryURL,
+            method: "GET",
+          }).then(function (response) {
+            $(".uv").text("UV Index: " + response.value.toFixed(1));
+          });
         });
-      });
-      fiveDayForecast(city);
-    }
+        fiveDayForecast(city);
+      }
 
     // This function displays the 5 day forecast based off which city the user inputs
 
@@ -259,10 +254,21 @@ function fiveDayForecast(city){
 }
       //This click function lets users search for different cities when the search button is clicked.
       
-      $("#searchBtn").on("click", searchCity)
-      
+      $("#searchBtn").on("click", function (){
+        var city = $("#chosenCity").val().trim()
+        searchCity(city)
+        var list = $("<button>").addClass("cityBtn").text(city)
+        $("#cities").append(list)
+      })
+      $("#cities").on("click", "button", function (){
+        searchCity($(this).text())
+      })
 
     
     </script>
   </body>
 </html>
+      
+
+
+
