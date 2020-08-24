@@ -8,6 +8,12 @@ https://grantscriver.github.io/My-Portfolio/Projects/Portfolio/Develop/index.htm
 
 This website provides an introduction to myself and what I offer in web development. Providing an interactive experience where a user can learn a lot about me from exploring the site. In the portfolio section you will see three of my applications deployed with live links. In the contact folder you can find my email, phone number, my resume, Github Profile, and LinkedIn profile.
 
+## Demonstration of Application
+
+![About Me Page](./Assets/Portfolioscreenshot1.jpg)
+![Portfolio Page](./Assets/Portfolioscreenshot2.jpg)
+![Contact Page](./Assets/Portfolioscreenshot3.jpg)
+
 ## Technologies Used
 
 HTML
