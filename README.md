@@ -1,37 +1,44 @@
-## Welcome to GitHub Pages
+# Grant Scriver's Portfolio
 
-You can use the [editor on GitHub](https://github.com/grantscriver/My-Portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Live Site
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+https://grantscriver.github.io/My-Portfolio/Projects/Portfolio/Develop/index.html
 
-### Markdown
+## Description
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This website provides an introduction to myself and what I offer in web development. Providing an interactive experience where a user can learn a lot about me from exploring the site. In the portfolio section you will see three of my applications deployed with live links. In the contact folder you can find my email, phone number, my resume, Github Profile, and LinkedIn profile.
 
-```markdown
-Syntax highlighted code block
+## Technologies Used
 
-# Header 1
-## Header 2
-### Header 3
+HTML
+Bootstrap - Framework used to structure application
+CSS - Used in partnership with Bootstrap for styling purposes
+Google Fonts - Used for different letter fonts
 
-- Bulleted
-- List
+## Contributions
 
-1. Numbered
-2. List
+Application designed by Grant Scriver
 
-**Bold** and _Italic_ and `Code` text
+## License
 
-[Link](url) and ![Image](src)
-```
+MIT License
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Copyright (c) 2020 Grant Scriver
 
-### Jekyll Themes
+Permission is hereby granted, free of charge, to any person obtaining a copy  
+of this software and associated documentation files (the "Software"), to deal  
+in the Software without restriction, including without limitation the rights  
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
+copies of the Software, and to permit persons to whom the Software is  
+furnished to do so, subject to the following conditions:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/grantscriver/My-Portfolio/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+The above copyright notice and this permission notice shall be included in all  
+copies or substantial portions of the Software.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
+SOFTWARE.
