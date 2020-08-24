@@ -10,7 +10,7 @@ This application will help users find different weather facts for whatever city 
 
 ## Demonstration of Application
 
-![alt text](./Assets/weatherdashboarddemo.gif)
+![Demonstration of Application](./Assets/weatherdashboarddemo.gif)
 
 ## Technologies Used
 
