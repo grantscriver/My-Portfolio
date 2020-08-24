@@ -2,7 +2,7 @@
 
 ## Live Site
 
-https://grantscriver.github.io/My-Portfolio/Homework/Week-6/Develop/index.html
+https://grantscriver.github.io/My-Portfolio/Projects/Weather-Dashboard/Develop/index.html
 
 ## Description
 

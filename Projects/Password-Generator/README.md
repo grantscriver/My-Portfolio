@@ -4,4 +4,4 @@ Depending on the users response the website will then generate a random password
 
 ![alt text](./Assets/Screenshot.jpg)
 
-https://github.com/grantscriver/My-Portfolio/tree/master/Homework/Week-3/Develop
+https://grantscriver.github.io/My-Portfolio/Projects/Password-Generator/Develop/index.html

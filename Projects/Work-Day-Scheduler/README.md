@@ -4,4 +4,4 @@ This work day scheduler will be able to save different activities that a user in
 
 ![alt text](./Assets/workdayschedulerscreenshot.jpg)
 
-https://grantscriver.github.io/My-Portfolio/Homework/Week-5/Develop/index.html
+https://grantscriver.github.io/My-Portfolio/Projects/Work-Day-Scheduler/Develop/index.html
