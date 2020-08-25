@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Assets/Portfolio.css" />
+
+    <title>Grant Scriver's Portfolio</title>
+    <!--Notice the links to my css & bootstrap-->
+  </head>
+
+  <body>
+    <!--Nav Bar Branding-->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #454253;"
+    >
+      <a class="navbar-brand">Grant Scriver</a>
+      <!--Button for responsive design-->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--This is where the Navbar is encoded-->
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">About</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link disabled" href="./portfolio.html"
+              >Portfolio <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row mt-3">
+        <div class="col-4">
+          <img
+            src="./Assets/Motivation-Station-Demonstration.gif"
+            class="img-fluid"
+            alt="Motivation Station GIF"
+          />
+        </div>
+        <div class="col-8">
+          <h3 class="textColor">Motivation Station</h3>
+          <p class="textColor">
+            When this website is loaded, the user is greeted with a random image
+            from the Harvard Museum of Art. The user is then prompted to click a
+            button, that will generate a random quote from the QuoteGarden API.
+            If the user likes the quote, they are able to save it to a list. The
+            user can then "tweet" any saved quotes on that list directly to
+            their twitter feed using the Twitter API.
+          </p>
+          <a
+            type="button"
+            class="btn textColor"
+            href="https://github.com/TomOverland/Motivation-Station"
+            target="_blank"
+            >GitHub
+          </a>
+          <a
+            type="button"
+            class="btn textColor"
+            href="https://tomoverland.github.io/Motivation-Station/"
+            target="_blank"
+            >Live Site
+          </a>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-4">
+          <img
+            src="./Assets/weatherdashboarddemo.gif"
+            class="img-fluid"
+            alt="Weather Dashboard GIF"
+          />
+        </div>
+        <div class="col-8">
+          <h3 class="textColor">Weather Dashboard</h3>
+          <p class="textColor">
+            This application will help users find different weather facts for
+            whatever city they type in. It will give the current and forecast
+            weather through the use of an API.
+          </p>
+          <a
+            type="button"
+            class="btn textColor"
+            href="https://github.com/grantscriver/My-Portfolio/tree/master/Projects/Weather-Dashboard"
+            target="_blank"
+            >GitHub
+          </a>
+          <a
+            type="button"
+            class="btn textColor"
+            href="https://grantscriver.github.io/My-Portfolio/Projects/Weather-Dashboard/Develop/index.html"
+            target="_blank"
+            >Live Site
+          </a>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-4">
+          <img
+            src="./Assets/workdayscheduler.gif"
+            class="img-fluid"
+            alt="Work Work-Day-Scheduler GIF"
+          />
+        </div>
+        <div class="col-8">
+          <h3 class="textColor">Work-Day-Scheduler</h3>
+          <p class="textColor">
+            This work day scheduler will be able to save different activities
+            that a user inputs from the description box. The description box
+            will then change colors based on what the current time is. If the
+            current hour is in the past the box will turn grey, while if the
+            current hour is equal to the boxes hour it will turn pink, and
+            lastly if the boxes time is in the future of the day it will be
+            green.
+          </p>
+          <a
+            type="button"
+            class="btn textColor"
+            href="https://github.com/grantscriver/My-Portfolio/tree/master/Projects/Work-Day-Scheduler"
+            target="_blank"
+            >GitHub
+          </a>
+          <a
+            type="button"
+            class="btn textColor"
+            href="https://grantscriver.github.io/My-Portfolio/Projects/Work-Day-Scheduler/Develop/index.html"
+            target="_blank"
+            >Live Site
+          </a>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
