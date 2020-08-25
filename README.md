@@ -2,7 +2,7 @@
 
 ## Live Site
 
-https://grantscriver.github.io/My-Portfolio/Projects/Portfolio/Develop/index.html
+https://grantscriver.github.io/My-Portfolio
 
 ## Description
 
