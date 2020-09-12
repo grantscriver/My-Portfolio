@@ -51,19 +51,15 @@ const questions = [
   },
 ];
 
+// functions to get the users input and generate and write the files to the README.md
 inquirer.prompt(questions).then((answers) => {
   const response = generateMarkdown(answers);
   console.log(answers);
 
-  fs.writeFile(
-    "./Assets/README.md",
-    response,
-    //JSON.stringify(response, null, "  "),
-    function (err) {
-      if (err) {
-        return console.log(err);
-      }
-      console.log("success!");
+  fs.writeFile("./Assets/README.md", response, function (err) {
+    if (err) {
+      return console.log(err);
     }
-  );
+    console.log("success!");
+  });
 });
