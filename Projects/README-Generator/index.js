@@ -52,9 +52,13 @@ const questions = [
 ];
 
 inquirer.prompt(questions).then((answers) => {
+  const response = generateMarkdown(answers);
+  console.log(answers);
+
   fs.writeFile(
     "./Assets/README.md",
-    JSON.stringify(answers, null, "  "),
+    response,
+    //JSON.stringify(response, null, "  "),
     function (err) {
       if (err) {
         return console.log(err);
