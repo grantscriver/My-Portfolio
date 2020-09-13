@@ -18,7 +18,7 @@ This application uses Node.js to create questions the user has to answer. These 
 ## Installation:
 
 1. Install node.js onto your computer. The link can be be found [here](https://nodejs.org/en/)
-2. Change directories to where you want it, then clone the repository at the link by copying this link in[github](https://github.com/grantscriver/My-Portfolio.git) ![Screenshot of repo](./Assets/gitclone.jpg)
+2. Change directories to where you want it, then clone the repository by copying this link on [github](https://github.com/grantscriver/My-Portfolio.git) ![Screenshot of repo](./Assets/gitclone.jpg)
 3. Clone the repo using the git clone command ![Git clone command](./Assets/gitclonecommand.jpg)
 4. Change directories into the "README-Generator ![Directory Folder](./Assets/cdfolder.jpg)
 5. Run "npm init" ![npm init](./Assets/npm-init.jpg)
