@@ -43,7 +43,7 @@ No testing.
 
 ## Demonstration
 
-[link to YouTube](https://drive.google.com/file/d/1Kur-WbEYCbm2NhZ4mFTC7HqcKWy9ypQT/view?usp=sharing)
+[Link to video demonstration](https://drive.google.com/file/d/1Kur-WbEYCbm2NhZ4mFTC7HqcKWy9ypQT/view?usp=sharing)
 
 ## Questions
 
