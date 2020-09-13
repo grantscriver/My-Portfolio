@@ -18,10 +18,12 @@ This application uses Node.js to create questions the user has to answer. These 
 ## Installation:
 
 1. Install node.js onto your computer. The link can be be found [here](https://nodejs.org/en/)
-2. Clone my repository at the link by copying this [link to github](https://github.com/grantscriver/My-Portfolio/tree/master/Projects/README-Generator) ![Screenshot of repo](./Assets/githubrepo.jpg)
-3. Using git bash or Terminal change directorys to where you have the rpo cloned and enter "npm init" ![npm init](./Assets/npm-init.jpg)
-4. Then enter "npm i" or "npm install" ![npm install](./Assets/npm-install.jpg)
-5. Run "node index.js" and answer the questions ![node index.js](./Assets/node-index.jpg)
+2. Change directories to where you want it, then clone the repository at the link by copying this [link to github](https://github.com/grantscriver/My-Portfolio.git) ![Screenshot of repo](./Assets/gitclone.jpg)
+3. Clone the repo using the git clone command ![Git clone command](./Assets/gitclonecommand.jpg)
+4. Change directories into the "README-Generator ![Directory Folder](./Assets/cdfolder.jpg)
+5. Run "npm init" ![npm init](./Assets/npm-init.jpg)
+6. Then enter "npm i" or "npm install" ![npm install](./Assets/npm-install.jpg)
+7. Run "node index.js" and answer the questions ![node index.js](./Assets/node-index.jpg)
 
 ## Usage:
 
@@ -41,7 +43,7 @@ No testing.
 
 ## Demonstration
 
-[link to YouTube](https://youtu.be/mTt_MUZ8_Bk)
+[link to YouTube](https://drive.google.com/file/d/1Kur-WbEYCbm2NhZ4mFTC7HqcKWy9ypQT/view?usp=sharing)
 
 ## Questions
 
