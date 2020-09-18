@@ -10,7 +10,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-console.log("hello");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
@@ -33,3 +32,68 @@ console.log("hello");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+class GatherInfo {
+  // Save a reference for `this` in `this` as `this` will change inside of inquirer
+  constructor() {
+    this.addEmployee = false;
+  }
+  // Sets the guesses to 10 and gets the next word
+  start() {
+    this.addEmployee = true;
+    this.getEmployeeType();
+    console.log("hel");
+  }
+
+  // Uses inquirer to prompt the user for their guess
+  getEmployeeType() {
+    this.askForType().then(() => {
+      // If the user has no more employees to add
+      if (this.addEmployee == false) {
+        console.log("Done adding employees");
+
+        // else adds another employee
+      } else {
+        console.log("Adding another employee");
+        this.askForType();
+      }
+    });
+  }
+
+  // Prompts the user for a employee type
+  askForType() {
+    return inquirer
+      .prompt([
+        {
+          type: "list",
+          name: "employee",
+          message: "Employee type:",
+          choices: ["Engineer", "Intern", "Manager", "Employee"],
+        },
+      ])
+      .then((val) => {
+        console.log(val.employee);
+        if (val.employee == "Engineer") {
+          console.log("\nEngineer\n");
+        } else if (val.employee == "Intern") {
+          console.log("\nIntern\n");
+        } else if (val.employee == "Manager") {
+          console.log("\nManager\n");
+        } else if (val.employee == "Employee") {
+          console.log("\nEmployee\n");
+        }
+      });
+  }
+
+  // Logs goodbye and exits the node app, then exits process within your terminal
+  quit() {
+    console.log("\nGoodbye!");
+    process.exit(0);
+  }
+}
+
+const gatherInfo = new GatherInfo();
+
+gatherInfo.start();
+
+module.exports = gatherInfo;
