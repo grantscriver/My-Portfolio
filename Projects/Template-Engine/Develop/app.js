@@ -159,7 +159,12 @@ class GatherInfo {
       .then((val) => {
         this.newEmployee.github = val.GitHub;
         employees.push(
-          new Engineer(this.id, this.email, this.role, this.github)
+          new Engineer(
+            this.newEmployee.name,
+            this.newEmployee.id,
+            this.newEmployee.email,
+            this.newEmployee.github
+          )
         );
         this.askIfMore();
       });
@@ -189,6 +194,7 @@ class GatherInfo {
         } else {
           // render results here
           const html = render(employees);
+          console.log(employees[0]);
           this.quit();
         }
       });
