@@ -34,30 +34,10 @@ const render = require("./lib/htmlRenderer");
 // for the provided `render` function to work! ```
 
 class GatherInfo {
-  // Save a reference for `this` in `this` as `this` will change inside of inquirer
-  constructor() {
-    this.addEmployee = false;
-  }
-  // Sets the guesses to 10 and gets the next word
   start() {
-    this.addEmployee = true;
-    this.getEmployeeType();
-    console.log("hel");
-  }
-
-  // Uses inquirer to prompt the user for their guess
-  getEmployeeType() {
-    this.askForType().then(() => {
-      // If the user has no more employees to add
-      if (this.addEmployee == false) {
-        console.log("Done adding employees");
-
-        // else adds another employee
-      } else {
-        console.log("Adding another employee");
-        this.askForType();
-      }
-    });
+    // Go to manager inquire here
+    console.log(" Going to manager input");
+    this.askForType();
   }
 
   // Prompts the user for a employee type
@@ -68,19 +48,35 @@ class GatherInfo {
           type: "list",
           name: "employee",
           message: "Employee type:",
-          choices: ["Engineer", "Intern", "Manager", "Employee"],
+          choices: ["Engineer", "Intern"],
         },
       ])
       .then((val) => {
-        console.log(val.employee);
         if (val.employee == "Engineer") {
-          console.log("\nEngineer\n");
+          console.log("\nGo to Engineer input\n");
         } else if (val.employee == "Intern") {
-          console.log("\nIntern\n");
-        } else if (val.employee == "Manager") {
-          console.log("\nManager\n");
-        } else if (val.employee == "Employee") {
-          console.log("\nEmployee\n");
+          console.log("\nGo to Intern input\n");
+        }
+        this.askIfMore();
+      });
+  }
+
+  // ask user if there are more employees to add
+  askIfMore() {
+    return inquirer
+      .prompt([
+        {
+          type: "confirm",
+          name: "choice",
+          message: "Are there any more employees?",
+        },
+      ])
+      .then((val) => {
+        if (val.choice) {
+          this.askForType();
+        } else {
+          // render results here
+          this.quit();
         }
       });
   }
