@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const Employee = require("./lib/Employee");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
@@ -36,33 +37,120 @@ const render = require("./lib/htmlRenderer");
 class GatherInfo {
   start() {
     // Go to manager inquire here
-    console.log(" Going to manager input");
-    this.askForType();
+
+    this.currentEmployee = new Employee();
+
+    this.askForName();
+  }
+
+  askForName() {
+    return inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "employeeName",
+          message: "Employee name:",
+        },
+      ])
+      .then((val) => {
+        this.currentEmployee.name = val.employeeName;
+        this.askForID();
+      });
+  }
+
+  askForID() {
+    return inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "employeeID",
+          message: "Employee ID:",
+        },
+      ])
+      .then((val) => {
+        this.currentEmployee.id = val.employeeID;
+        this.askForEmail();
+      });
+  }
+
+  askForEmail() {
+    return inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "employeeEmail",
+          message: "Employee Email:",
+        },
+      ])
+      .then((val) => {
+        this.currentEmployee.email = val.employeeEmail;
+        this.askForRole();
+      });
   }
 
   // Prompts the user for a employee type
-  askForType() {
+  askForRole() {
     return inquirer
       .prompt([
         {
           type: "list",
           name: "employee",
           message: "Employee type:",
-          choices: ["Engineer", "Intern"],
+          choices: ["Manager", "Engineer", "Intern"],
         },
       ])
       .then((val) => {
         if (val.employee == "Engineer") {
-          console.log("\nGo to Engineer input\n");
+          this.currentEmployee.role = "Engineer";
+          this.askForGitHub();
         } else if (val.employee == "Intern") {
-          console.log("\nGo to Intern input\n");
+          this.currentEmployee.role = "Intern";
+          this.askForSchool();
+        } else {
+          this.currentEmployee.role = "Manager";
+          this.AskForNumber();
         }
+        this.askIfMore();
+      });
+  }
+
+  askForSchool() {
+    return inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "School",
+          message: "School:",
+        },
+      ])
+      .then((val) => {
+        this.currentEmployee.school = val.School();
+        this.askIfMore();
+      });
+  }
+
+  askForGitHub() {
+    return inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "GitHub",
+          message: "GitHub Username:",
+        },
+      ])
+      .then((val) => {
+        this.currentEmployee.github = val.GitHub();
         this.askIfMore();
       });
   }
 
   // ask user if there are more employees to add
   askIfMore() {
+    console.log(this.currentEmployee.name);
+    console.log(this.currentEmployee.id);
+    console.log(this.currentEmployee.email);
+    console.log(this.currentEmployee.role);
+
     return inquirer
       .prompt([
         {
@@ -73,7 +161,7 @@ class GatherInfo {
       ])
       .then((val) => {
         if (val.choice) {
-          this.askForType();
+          this.askForName();
         } else {
           // render results here
           this.quit();
