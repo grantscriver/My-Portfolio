@@ -1,6 +1,4 @@
 // TODO: Write code to define and export the Employee class
-const inquirer = require("inquirer");
-const { askForName, askIfMore } = require("../app");
 
 // TODO: Write code to define and export the Employee class
 /* 
@@ -18,14 +16,20 @@ methods:
 */
 
 class Employee {
-  constructor(employee) {
-    this.name = "Bob";
-    this.id = 1;
-    this.email = "a@b.com";
+  constructor(name, id, email) {
+    this.name = name;
+    this.id = id;
+    this.email = email;
   }
-  getName() {}
-  getID() {}
-  getEmail() {}
+  getName() {
+    return this.name;
+  }
+  getId() {
+    return this.id;
+  }
+  getEmail() {
+    return this.email;
+  }
   getRole() {
     return "Employee";
   }

@@ -34,11 +34,13 @@ const Employee = require("./lib/Employee");
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
 
+const employees = [];
+
 class GatherInfo {
   start() {
     // Go to manager inquire here
 
-    this.currentEmployee = new Employee();
+    this.newEmployee = new Employee();
 
     this.askForName();
   }
@@ -53,7 +55,7 @@ class GatherInfo {
         },
       ])
       .then((val) => {
-        this.currentEmployee.name = val.employeeName;
+        this.newEmployee.name = val.employeeName;
         this.askForID();
       });
   }
@@ -68,7 +70,7 @@ class GatherInfo {
         },
       ])
       .then((val) => {
-        this.currentEmployee.id = val.employeeID;
+        this.newEmployee.id = val.employeeID;
         this.askForEmail();
       });
   }
@@ -83,7 +85,7 @@ class GatherInfo {
         },
       ])
       .then((val) => {
-        this.currentEmployee.email = val.employeeEmail;
+        this.newEmployee.email = val.employeeEmail;
         this.askForRole();
       });
   }
@@ -101,15 +103,30 @@ class GatherInfo {
       ])
       .then((val) => {
         if (val.employee == "Engineer") {
-          this.currentEmployee.role = "Engineer";
+          this.newEmployee.role = "Engineer";
           this.askForGitHub();
         } else if (val.employee == "Intern") {
-          this.currentEmployee.role = "Intern";
+          this.newEmployee.role = "Intern";
           this.askForSchool();
         } else {
-          this.currentEmployee.role = "Manager";
+          this.newEmployee.role = "Manager";
           this.AskForNumber();
         }
+      });
+  }
+
+  AskForNumber() {
+    return inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "officenumber",
+          message: "Office Number:",
+        },
+      ])
+      .then((val) => {
+        this.newEmployee.officeNumber = val.officenumber;
+        employees.push(new Manager(id, email, role, officeNumber));
         this.askIfMore();
       });
   }
@@ -124,7 +141,8 @@ class GatherInfo {
         },
       ])
       .then((val) => {
-        this.currentEmployee.school = val.School();
+        this.newEmployee.school = val.School;
+        employees.push(new Intern(id, email, role, school));
         this.askIfMore();
       });
   }
@@ -139,17 +157,23 @@ class GatherInfo {
         },
       ])
       .then((val) => {
-        this.currentEmployee.github = val.GitHub();
+        this.newEmployee.github = val.GitHub;
+        employees.push(
+          new Engineer(this.id, this.email, this.role, this.github)
+        );
         this.askIfMore();
       });
   }
 
   // ask user if there are more employees to add
   askIfMore() {
-    console.log(this.currentEmployee.name);
-    console.log(this.currentEmployee.id);
-    console.log(this.currentEmployee.email);
-    console.log(this.currentEmployee.role);
+    console.log(this.newEmployee.name);
+    console.log(this.newEmployee.id);
+    console.log(this.newEmployee.email);
+    console.log(this.newEmployee.role);
+    console.log(this.newEmployee.school);
+    console.log(this.newEmployee.officeNumber);
+    console.log(this.newEmployee.github);
 
     return inquirer
       .prompt([
@@ -161,9 +185,10 @@ class GatherInfo {
       ])
       .then((val) => {
         if (val.choice) {
-          this.askForName();
+          this.start();
         } else {
           // render results here
+          const html = render(employees);
           this.quit();
         }
       });
