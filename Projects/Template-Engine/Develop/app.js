@@ -194,7 +194,7 @@ class GatherInfo {
         } else {
           // render results here
           const html = render(employees);
-          console.log(employees[0]);
+          //console.log(employees[0]);
           this.quit();
         }
       });
