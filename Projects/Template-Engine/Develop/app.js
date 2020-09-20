@@ -126,7 +126,15 @@ class GatherInfo {
       ])
       .then((val) => {
         this.newEmployee.officeNumber = val.officenumber;
-        employees.push(new Manager(id, email, role, officeNumber));
+        employees.push(
+          new Manager(
+            this.newEmployee.name,
+            this.newEmployee.id,
+            this.newEmployee.email,
+            this.newEmployee.officeNumber
+          )
+        );
+
         this.askIfMore();
       });
   }
@@ -142,7 +150,14 @@ class GatherInfo {
       ])
       .then((val) => {
         this.newEmployee.school = val.School;
-        employees.push(new Intern(id, email, role, school));
+        employees.push(
+          new Intern(
+            this.newEmployee.name,
+            this.newEmployee.id,
+            this.newEmployee.email,
+            this.newEmployee.school
+          )
+        );
         this.askIfMore();
       });
   }
@@ -172,14 +187,6 @@ class GatherInfo {
 
   // ask user if there are more employees to add
   askIfMore() {
-    console.log(this.newEmployee.name);
-    console.log(this.newEmployee.id);
-    console.log(this.newEmployee.email);
-    console.log(this.newEmployee.role);
-    console.log(this.newEmployee.school);
-    console.log(this.newEmployee.officeNumber);
-    console.log(this.newEmployee.github);
-
     return inquirer
       .prompt([
         {
@@ -194,6 +201,9 @@ class GatherInfo {
         } else {
           // render results here
           const html = render(employees);
+          //console.log(html);
+          //console.log(outputPath);
+          fs.writeFileSync(outputPath, html);
           //console.log(employees[0]);
           this.quit();
         }

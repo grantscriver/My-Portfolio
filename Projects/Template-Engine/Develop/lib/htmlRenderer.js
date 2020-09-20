@@ -4,7 +4,6 @@ const fs = require("fs");
 const templatesDir = path.resolve(__dirname, "../templates");
 
 const render = (employees) => {
-  console.log(employees[0]);
   const html = [];
 
   html.push(
@@ -22,7 +21,6 @@ const render = (employees) => {
       .filter((employee) => employee.getRole() === "Intern")
       .map((intern) => renderIntern(intern))
   );
-  console.log(renderMain(html.join("")));
   return renderMain(html.join(""));
 };
 
