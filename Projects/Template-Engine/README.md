@@ -23,4 +23,25 @@ This application uses Node.js to question the user about employees with a comman
 4. Change directories into the "Template-Engine" ![Directory Folder](./Assets/cdfoldertemplate-engine.jpg)
 5. Run "npm init" ![npm init](./Assets/npm-init.jpg)
 6. Then enter "npm i" or "npm install" ![npm install](./Assets/npm-install.jpg)
-7. Change directories into the "Develop" folder then run the node app.js command ![node app.js](./Assets/nodeappjs.jpg)
+7. Change directories into the "Develop" folder then run the node app.js command and then follow the prompts ![node app.js](./Assets/nodeappjs.jpg)
+
+## Usage:
+
+This application is used to generate an HTML page for anyone's employees.
+
+## License:
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Test:
+
+The application was test with node test and passed all the tests. ![npm test](./Assets/npmtest.jpg)
+
+## Demonstration
+
+[Link to video demonstration]()
+
+## Questions
+
+For more information you can visit my [Github](https://github.com/grantscriver)
+If you have any additional questions you can email me at: Grantscriver@gmail.com
