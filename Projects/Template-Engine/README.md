@@ -35,6 +35,10 @@ This application is used to generate an HTML page for anyone's employees.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Contributions:
+
+Right now I am the only one who has contributed, if you would like to then send a pull request and I will review it.
+
 ## Test:
 
 The application was test with node test and passed all the tests. ![npm test](./Assets/npmtest.jpg)
